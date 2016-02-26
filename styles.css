@@ -1,0 +1,30 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*.main-container {
+  height: 100px;
+  width: 100px;
+  background-image: url('pictures/sportsbookScreen.jpg');
+  position: fixed;*/
+
+}
+
+/*.header {
+  width: 100vw;
+  height: 10%;
+  background: #00A11B;
+  color: white;
+  text-align: center;
+  font-size: 60px;
+}
+
+.ui {
+  height: 75%;
+  width: 75%;
+  background: white;
+  margin: 0;
+}*/
