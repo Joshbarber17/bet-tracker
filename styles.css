@@ -11,41 +11,83 @@ body{
 .main-container {
   height: 100vh;
   width: 100vw;
-  background-image: url('pictures/moneybackground.jpg');
+  background-image: url('pictures/cardsBackground.jpg');
   background-size: cover;
+  position: relative;
 }
-
-.header {
-  width: 100vw;
-  height: 10%;
+.opac {
+  height: 80%;
+  width: 75%;
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 13%;
   background: black;
-  color: green;
-  text-align: center;
-  font-family: monospace;
-  font-size: 60px;
+  opacity: .5;
+  z-index: 0;
 }
 
 .ui {
   height: 80%;
   width: 75%;
-  background-color: white;
-  margin: auto;
-  margin-top: 30px;
-}
-
-/*.add-new-better{
-  position: relative;
-  height: 100%;
-  width: 100%;
+  position: absolute;;
+  margin-top: 5%;
+  margin-left: 13%;
+  z-index: 1;
 }
 
 #add-new-better {
-  position: absolute;
-
+  text-align: center;
+  font-size: 50px;
+  color: white;
 }
 
 #new-better-input {
-  position: absolute;
-  margin-left: 10%;
-  margin-right: 10%;
-}*/
+  text-align: center;
+  color: white;
+  font-size: 15px;
+}
+
+#list-head {
+  font-size: 40px;
+  color: white;
+  padding-left: 2%;
+}
+#betters {
+  font-weight: 600;
+  color: white;
+}
+#links {
+  color: white;
+}
+.betPageLinks {
+  color: white;
+}
+.addNewBetHeader {
+  color: white;
+  font-size: 33px;
+  text-align: center;
+}
+ .newBetForm {
+   color: white;
+   text-align: center;
+ }
+ .currentBetsWith {
+   color: white;
+   font-size: 33px;
+   margin-top: 2%;
+ }
+
+ .currentBets {
+   color: white;
+ }
+
+.satisfiedLinks{
+  color: white;
+}
+.satisfiedBetsHead {
+  color: white;
+  font-size: 33px;
+}
+.satisfiedBets {
+  color: white;
+}

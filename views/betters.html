@@ -1,21 +1,19 @@
-<head>
-  <title>Betters</title>
-</head>
-<body ng-controller="bettersCtrl">
-  <div class='add-new-better'>
+<body>
+  <div>
     <div id='add-new-better'>Add New Better</div>
     <form id='new-better-input'>
-      First Name: <input ng-model='firstName' type='text' placeholder="Enter First Name"></input>
-      Last Name: <input ng-model='lastName' type='text' placeholder="Enter Last Name"></input>
-      Phone Number: <input ng-model='phone' type='text' placeholder="(xxx)xxx-xxxx"></input>
-      Payment: <input ng-model='payId' type='text' placeholder="Venmo Username"></input>
+      <p>First Name: <input ng-model='firstName' type='text' placeholder="Enter First Name"></input>
+      Last Name: <input ng-model='lastName' type='text' placeholder="Enter Last Name"></input></p>
+      <p>Phone Number: <input ng-model='phone' type='text' placeholder="(xxx)xxx-xxxx"></input>
+      Payment: <input ng-model='payId' type='text' placeholder="Venmo Username"></input></p>
+      <p><button ng-click='newBetter(firstName, lastName, phone, payId)'>Submit New Better</button><p>
     </form>
-    <button ng-click='newBetter(firstName, lastName, phone, payId)'>Submit New Better</button>
   </div>
   <div class=better-list>
-    <div>Betters List</div>
-    <ul ng-repeat='person in array'>
-      <li><a ui-sref="bets">{{person.firstName}}</a></li>
+    <div id='list-head'>Betters List</div>
+    <ul ng-repeat='better in betters track by $index' id='betters'>
+      <li><a id='links' ui-sref="bets({betterId: better.$id})">{{better.firstName}} {{better.lastName}}</a>
+        <span><strong>Venmo Username:</strong> {{better.payId}} <strong>Phone:</strong> {{better.phone}}</span> <button>Remove Better</button></li>
     </ul>
   </div>
 </body>

@@ -1,21 +1,19 @@
-<body ng-controller="bettersCtrl">
-  <p><a ui-sref="betters">Back to list of Betters</a></p>
-  <p><a ui-sref="satisfied">See bets satisfied with "better"</a></p>
+<body>
+  <p><a class ='betPageLinks' ui-sref="betters">Back to list of Betters</a></p>
+  <p><a class ='betPageLinks' ui-sref="satisfied">Click here to see satisfied bets with {{userobj.firstName}}</a></p>
   <div class='add-new-better'>
-    <h1>Add New Bet</h1>
-    Date Bet Placed: <input placeholder="MM/DD/YY"/>
-    Bet Ammount: <input placeholder="How Much?"/>
-    Bet Description <input placeholder="What's the bet?"/>
-    <button>Submit New Better</button>
+    <div class="addNewBetHeader">Add New Bet with {{userobj.firstName}}</div>
+    <form class="newBetForm">
+      <p>Date Bet Placed: <input ng-model="betDate" placeholder="MM/DD/YY"/>
+      Bet Ammount: <input ng-model="betAmount" placeholder="How Much?"/></p>
+      Bet Description <input ng-model="betDescription" placeholder="What's the bet?"/>
+      <button ng-click='newBet(betDate, betAmount, betDescription)'>Submit New Bet</button>
+    </form>
   </div>
-  <div class=better-list>
-    <h1>Current Bets</h1>
-    <ul>
-      <li>Bet</li>
-      <li>Bet</li>
-      <li>Bet</li>
-      <li>Bet</li>
-      <li>Bet</li>
+  <div>
+    <div class='currentBetsWith'>Current Bets with {{userobj.firstName}}</div>
+    <ul class='currentBets' ng-repeat='bet in bets'>
+      <li>{{bet.betAmount}} bet on {{bet.betDate}} <strong>Bet Details:</strong> {{bet.betDescription}} <button ng-click='satisfy()'>Click to Satisfy Bet</button></li>
     </ul>
   </div>
 </body>
