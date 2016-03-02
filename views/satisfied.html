@@ -1,11 +1,14 @@
-<p><a ui-sref="betters" class='satisfiedLinks'>Back to List of Betters</a></p>
-<p><a ui-sref="bets" class='satisfiedLinks'>Back to List of Bets</a></p>
-<div class='satisfiedBetsHead'>Satisfied Bets with "Better"</div>
-<ul class='satisfiedBets'>
-  <li>Bet, Winner, Date Paid, Paid with</li>
-  <li>Bet, Winner, Date Paid, Paid with</li>
-  <li>Bet, Winner, Date Paid, Paid with</li>
-  <li>Bet, Winner, Date Paid, Paid with</li>
-  <li>Bet, Winner, Date Paid, Paid with</li>
-  <li>Bet, Winner, Date Paid, Paid with</li>
-</ul>
+<div>
+  <div class='key-box'>
+    <div class='wins'> Wins =</div>
+    <div class='losses'> Losses = </div>
+    <div id='lossBox'></div>
+    <div id='winBox'></div> 
+  </div>
+  <header-dir></header-dir>
+  <p><a ui-sref="bets({betterId: thisBetter.betterId, betterFirstName: thisBetter.betterFirstName})" class='satisfiedLinks'>Back to List of Bets with {{thisBetter.betterFirstName}}</a></p>
+  <div class='satisfiedBetsHead'>Satisfied Bets with {{thisBetter.betterFirstName}}</div>
+  <ul win-loss-dir bet-winner='{{bet.betWinner}}' this-better='{{thisBetter.betterFirstName}}' ng-repeat='bet in satisfiedBets' class='satisfiedBets'>
+    <li>{{bet.betWinner}} won {{bet.betAmount}} on {{bet.datePaid}} because {{bet.satisfiedDescription}}  <button ng-click='deleteBet(bet)'>Remove Bet</button></li>
+  </ul>
+</div>

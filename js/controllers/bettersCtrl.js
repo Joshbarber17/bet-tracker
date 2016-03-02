@@ -7,8 +7,18 @@ angular.module('betTrack').controller('bettersCtrl', function($scope, $firebaseA
       phone: phone,
       payId: payId,
       bets: {
-        firstName: firstName
       }
     })
+    $scope.firstName = '';
+    $scope.lastName = '';
+    $scope.phone='';
+    $scope.payId='';
+  }
+  $scope.deleteBetter = function(better) {
+    if (confirm('Are you sure you want to remove this better?')) {
+        $scope.betters.$remove(better);
+    }
+    else {
+    }
   }
 })

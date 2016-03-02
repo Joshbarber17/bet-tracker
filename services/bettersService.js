@@ -6,4 +6,7 @@ angular.module('betTrack').service('bettersService', function(fb){
   this.getBet = function(betterId) {
     return new Firebase(fb.url + '/betters/' + betterId + '/bets');
   };
+  this.satisfyBet = function(betterId) {
+    return new Firebase(fb.url + '/betters/' + betterId + '/satisfied')
+  }
 })
