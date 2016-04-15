@@ -9,11 +9,11 @@
       <p><button ng-click='newBetter(firstName, lastName, phone, payId)'>Submit New Better</button><p>
     </form>
   </div>
-  <div class=better-list>
-    <div id='list-head'>Betters List</div>
-    <ul ng-repeat='better in betters track by $index' id='betters'>
-      <li><a id='links' ui-sref="bets({betterId: better.$id})">{{better.firstName}} {{better.lastName}}</a>
-        <span><strong>Venmo Username:</strong> {{better.payId}} <strong>Phone:</strong> {{better.phone}}</span> <button>Remove Better</button></li>
+  <div class='better-list'>
+    <div id='list-head'>Betters</div>
+    <ul ng-repeat='better in betters' id='betters'>
+      <li><a id='links' ui-sref="bets({betterId: better.$id, betterFirstName: better.firstName})">{{better.firstName}} {{better.lastName}}</a>
+        <span><strong>Venmo Username:</strong> {{better.payId}} <strong>Phone:</strong> {{better.phone}}</span> <button ng-click="deleteBetter(better)">Remove Better</button></li>
     </ul>
   </div>
 </body>

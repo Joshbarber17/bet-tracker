@@ -14,21 +14,26 @@ angular.module('betTrack', ['ui.router', 'firebase'])
     }
   })
   .state('bets', {
-    url: '/bets/:betterId',
+    url: '/bets?betterId&betterFirstName',
     templateUrl: 'views/bets.html',
     controller: 'betsCtrl',
     resolve: {
       betRef: function(bettersService, $stateParams) {
         return bettersService.getBet($stateParams.betterId);
       },
-      bettersRef: function(bettersService) {
-        return bettersService.getBetters();
+      satisfiedRef: function(bettersService, $stateParams) {
+        return bettersService.satisfyBet($stateParams.betterId);
       }
     }
   })
   .state('satisfied', {
-    url: '/satisfied',
+    url: '/satisfied?betterId&betterFirstName',
     templateUrl: 'views/satisfied.html',
-    controller: 'satisfiedCtrl'
+    controller: 'satisfiedCtrl',
+    resolve: {
+      satisfiedRef: function(bettersService, $stateParams) {
+        return bettersService.satisfyBet($stateParams.betterId);
+      }
+    }
   })
 })
